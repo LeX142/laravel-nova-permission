@@ -42,7 +42,7 @@ class RoleBooleanGroup extends BooleanGroup
             return;
         }
 
-        $model->roles()->detach();
+        $model->syncRoles([]);
 
         collect(json_decode($request[$requestAttribute], true))
             ->filter(static function (bool $value) {
